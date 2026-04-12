@@ -23,6 +23,6 @@ executable('alienfx-area51', alienfx_area51_sources,
 )
 
 install_data(sources : 'AlienFXArea51Logo.svg', install_dir : get_option('prefix') / '.local/share/AlienFXArea51')
-install_data(sources : 'AlienFX-Area51.desktop', install_dir : get_option('prefix') / '.local/share/applications')
+install_data(sources : 'org.gnome.AlienFXArea51.desktop', install_dir : get_option('prefix') / '.local/share/applications')
 
 

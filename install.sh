@@ -29,7 +29,7 @@ if [ ! $? -eq 0 ]; then
 fi
 
 # --- Update .desktop -----------------------------------------------
-file="$HOME/.local/share/applications/AlienFX-Area51.desktop"
+file="$HOME/.local/share/applications/org.gnome.AlienFXArea51.desktop"
 sed -i -e "s/FXUSER/$USER/g" "$file"
 if [ ! $? -eq 0 ]; then
     exit 1

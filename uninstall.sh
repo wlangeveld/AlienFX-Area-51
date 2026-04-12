@@ -5,5 +5,5 @@
 # ------------------------------------------------------------------
 
 # --- Delete files -------------------------------------------------------
-rm "$HOME/.local/share/applications/AlienFX-Area51.desktop"
+rm "$HOME/.local/share/applications/org.gnome.AlienFXArea51.desktop"
 rm -r "$HOME/.local/share/AlienFXArea51/"
