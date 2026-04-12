@@ -1,7 +1,7 @@
 #!/bin/bash
 # ------------------------------------------------------------------
 # [Freedom] install.sh
-#           Installs AlienFXAurora to user applications
+#           Installs AlienFXArea51 to user applications
 # ------------------------------------------------------------------
 
 
@@ -29,7 +29,7 @@ if [ ! $? -eq 0 ]; then
 fi
 
 # --- Update .desktop -----------------------------------------------
-file="$HOME/.local/share/applications/AlienFX-Aurora.desktop"
+file="$HOME/.local/share/applications/AlienFX-Area51.desktop"
 sed -i -e "s/FXUSER/$USER/g" "$file"
 if [ ! $? -eq 0 ]; then
     exit 1

@@ -1,7 +1,7 @@
 #pragma once
 
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 
 // Device
 void device_open(void);
@@ -17,22 +17,14 @@ void device_send(const uint8_t data[], uint16_t length);
 void device_receive(uint8_t data[], uint16_t length);
 
 // Zones
-extern uint8_t POWER_BUTTON[];
-extern size_t POWER_BUTTON_SIZE;
-extern uint8_t TEXT_LOGO[];
-extern size_t TEXT_LOGO_SIZE;
-extern uint8_t CASE_LIGHT[];
-extern size_t CASE_LIGHT_SIZE;
-extern uint8_t INNER_FAN[];
-extern size_t INNER_FAN_SIZE;
-extern uint8_t INNER_RING1[];
-extern size_t INNER_RING1_SIZE;
-extern uint8_t INNER_RING2[];
-extern size_t INNER_RING2_SIZE;
-extern uint8_t OUTER_RING1[];
-extern size_t OUTER_RING1_SIZE;
-extern uint8_t OUTER_RING2[];
-extern size_t OUTER_RING2_SIZE;
+extern uint8_t AREA_POWER[];
+extern size_t AREA_POWER_SIZE;
+extern uint8_t AREA_FRONT[];
+extern size_t AREA_FRONT_SIZE;
+extern uint8_t AREA_RIGHT[];
+extern size_t AREA_RIGHT_SIZE;
+extern uint8_t AREA_LEFT[];
+extern size_t AREA_LEFT_SIZE;
 // Interface
 #define PREAMBLE 0x03
 #define ZONE_LEFT 0x00
@@ -84,13 +76,13 @@ void send_zone_select(uint8_t loop, uint16_t zone_count, ...);
 
 void send_zone_select_arr(uint8_t loop, size_t zone_count, uint8_t zones[]);
 
-
 #define ADD_ACTION 0x24
 #define ACTION_COLOR 0x00
 #define ACTION_PULSE 0x01
 #define ACTION_MORPH 0x02
 
-void send_add_action(uint16_t action, uint16_t duration, uint16_t tempo, uint32_t color);
+void send_add_action(uint16_t action, uint16_t duration, uint16_t tempo,
+                     uint32_t color);
 
 #define SET_DIM 0x26
 #define BRIGHTNESS_OFF 0x64

@@ -1,4 +1,5 @@
-/* alienfx-aurora-window.h
+/* Derived from AlienFX-Aurora */
+/* alienfx-area51-window.h
  *
  * Copyright 2024 Freedom
  *
@@ -24,8 +25,9 @@
 
 G_BEGIN_DECLS
 
-#define ALIENFX_AURORA_TYPE_WINDOW (alienfx_aurora_window_get_type())
+#define ALIENFX_AREA51_TYPE_WINDOW (alienfx_area51_window_get_type())
 
-G_DECLARE_FINAL_TYPE(AlienfxAuroraWindow, alienfx_aurora_window, ALIENFX_AURORA, WINDOW, AdwApplicationWindow)
+G_DECLARE_FINAL_TYPE(AlienfxArea51Window, alienfx_area51_window, ALIENFX_AREA51,
+                     WINDOW, AdwApplicationWindow)
 
 G_END_DECLS

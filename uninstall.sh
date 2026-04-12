@@ -1,9 +1,9 @@
 #!/bin/bash
 # ------------------------------------------------------------------
 # [Freedom] uninstall.sh
-#           Uninstalls AlienFXAurora to user applications
+#           Uninstalls AlienFXArea51 to user applications
 # ------------------------------------------------------------------
 
 # --- Delete files -------------------------------------------------------
-rm "$HOME/.local/share/applications/AlienFX-Aurora.desktop"
-rm -r "$HOME/.local/share/AlienFXAurora/"
+rm "$HOME/.local/share/applications/AlienFX-Area51.desktop"
+rm -r "$HOME/.local/share/AlienFXArea51/"

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+
+Name=AlienFX-Area51
+Exec=sh -c  "$HOME/.local/share/AlienFXArea51/alienfx-area51"
+Icon=/home/FXUSER/.local/share/AlienFXArea51/AlienFXArea51Logo.svg
+
+Comment="Program to control FX lights on Alienware Area51 Desktops"
+
+Categories=Utility;
+Keywords=alien;fx;area51;
+StartupWMClass=org.gnome.AlienFXArea51

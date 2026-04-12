@@ -1,4 +1,5 @@
-/* alienfx-aurora-application.h
+/* Derived from AlienFX-Aurora */
+/* alienfx-area51-application.h
  *
  * Copyright 2024 Freedom
  *
@@ -24,11 +25,13 @@
 
 G_BEGIN_DECLS
 
-#define ALIENFX_AURORA_TYPE_APPLICATION (alienfx_aurora_application_get_type())
+#define ALIENFX_AREA51_TYPE_APPLICATION (alienfx_area51_application_get_type())
 
-G_DECLARE_FINAL_TYPE(AlienfxAuroraApplication, alienfx_aurora_application, ALIENFX_AURORA, APPLICATION, AdwApplication)
+G_DECLARE_FINAL_TYPE(AlienfxArea51Application, alienfx_area51_application,
+                     ALIENFX_AREA51, APPLICATION, AdwApplication)
 
-AlienfxAuroraApplication *alienfx_aurora_application_new(const char *application_id,
-                                                         GApplicationFlags flags);
+AlienfxArea51Application *
+alienfx_area51_application_new(const char *application_id,
+                               GApplicationFlags flags);
 
 G_END_DECLS

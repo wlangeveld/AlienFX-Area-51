@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/AlienFXArea51">
+    <file preprocess="xml-stripblanks">alienfx-area51-window.ui</file>
+    <file>AlienFXArea51Logo.svg</file>
+  </gresource>
+</gresources>

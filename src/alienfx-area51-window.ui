@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Created with Cambalache 0.92.1 -->
 <interface>
-  <!-- interface-name alienfx-aurora-window.ui -->
+  <!-- interface-name alienfx-area51-window.ui -->
   <requires lib="Adw" version="1.0"/>
   <requires lib="gio" version="2.0"/>
   <requires lib="gtk" version="4.0"/>
   <requires lib="libadwaita" version="1.4"/>
-  <template class="AlienfxAuroraWindow" parent="AdwApplicationWindow">
+  <template class="AlienfxArea51Window" parent="AdwApplicationWindow">
     <property name="content">
       <object class="AdwToolbarView">
         <child type="top">
@@ -29,6 +29,7 @@
             <property name="margin-top">10</property>
             <property name="orientation">vertical</property>
             <property name="spacing">10</property>
+            
             <child>
               <object class="GtkBox">
                 <property name="margin-end">10</property>
@@ -36,7 +37,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label">Alien Power Button</property>
+                    <property name="label">Power Button</property>
                     <property name="margin-start">10</property>
                     <property name="width-chars">20</property>
                   </object>
@@ -89,6 +90,7 @@
                 </child>
               </object>
             </child>
+            
             <child>
               <object class="GtkBox">
                 <property name="margin-end">10</property>
@@ -96,45 +98,45 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label">Inner Ring</property>
+                    <property name="label">Front Panel</property>
                     <property name="margin-start">10</property>
                     <property name="width-chars">20</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkColorDialogButton" id="btnInnerRing">
+                  <object class="GtkColorDialogButton" id="btnFront">
                     <property name="dialog">
                       <object class="GtkColorDialog"/>
                     </property>
-                    <property name="name">InnerRing</property>
+                    <property name="name">FrontPanel</property>
                     <property name="rgba">rgb(0,0,0)</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkInnerRingStatic">
+                  <object class="GtkCheckButton" id="chkFrontStatic">
                     <property name="active">True</property>
                     <property name="group">
-                      <object class="GtkCheckButton" id="grpInnerRing"/>
+                      <object class="GtkCheckButton" id="grpFront"/>
                     </property>
                     <property name="label">Static</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkInnerRingBreathe">
-                    <property name="group">grpInnerRing</property>
+                  <object class="GtkCheckButton" id="chkFrontBreathe">
+                    <property name="group">grpFront</property>
                     <property name="label">Breathe</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkInnerRingSpectrum">
-                    <property name="group">grpInnerRing</property>
+                  <object class="GtkCheckButton" id="chkFrontSpectrum">
+                    <property name="group">grpFront</property>
                     <property name="label">Spectrum</property>
                   </object>
                 </child>
                 <child>
                   <object class="GtkScale">
                     <property name="adjustment">
-                      <object class="GtkAdjustment" id="adjInner">
+                      <object class="GtkAdjustment" id="adjFront">
                         <property name="page-increment">1.0</property>
                         <property name="upper">100.0</property>
                         <property name="value">100.0</property>
@@ -149,6 +151,7 @@
                 </child>
               </object>
             </child>
+
             <child>
               <object class="GtkBox">
                 <property name="margin-end">10</property>
@@ -156,45 +159,45 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label">Outer Ring</property>
+                    <property name="label">Right Side Panel</property>
                     <property name="margin-start">10</property>
                     <property name="width-chars">20</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkColorDialogButton" id="btnOuterRing">
+                  <object class="GtkColorDialogButton" id="btnRight">
                     <property name="dialog">
                       <object class="GtkColorDialog"/>
                     </property>
-                    <property name="name">OuterRing</property>
+                    <property name="name">RightPanel</property>
                     <property name="rgba">rgb(0,0,0)</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkOuterRingStatic">
+                  <object class="GtkCheckButton" id="chkRightStatic">
                     <property name="active">True</property>
                     <property name="group">
-                      <object class="GtkCheckButton" id="grpOuterRing"/>
+                      <object class="GtkCheckButton" id="grpRight"/>
                     </property>
                     <property name="label">Static</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkOuterRingBreathe">
-                    <property name="group">grpOuterRing</property>
+                  <object class="GtkCheckButton" id="chkRightBreathe">
+                    <property name="group">grpRight</property>
                     <property name="label">Breathe</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkOuterRingSpectrum">
-                    <property name="group">grpOuterRing</property>
+                  <object class="GtkCheckButton" id="chkRightSpectrum">
+                    <property name="group">grpRight</property>
                     <property name="label">Spectrum</property>
                   </object>
                 </child>
                 <child>
                   <object class="GtkScale">
                     <property name="adjustment">
-                      <object class="GtkAdjustment" id="adjOuter">
+                      <object class="GtkAdjustment" id="adjRight">
                         <property name="page-increment">1.0</property>
                         <property name="step-increment">1.0</property>
                         <property name="upper">100.0</property>
@@ -210,126 +213,7 @@
                 </child>
               </object>
             </child>
-            <child>
-              <object class="GtkBox">
-                <property name="margin-end">10</property>
-                <property name="spacing">5</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label">Alienware Text Logo</property>
-                    <property name="margin-start">10</property>
-                    <property name="width-chars">20</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkColorDialogButton" id="btnTextLogo">
-                    <property name="dialog">
-                      <object class="GtkColorDialog"/>
-                    </property>
-                    <property name="name">TextLogo</property>
-                    <property name="rgba">rgb(0,0,0)</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="chkLogoStatic">
-                    <property name="active">True</property>
-                    <property name="group">
-                      <object class="GtkCheckButton" id="grpLogo"/>
-                    </property>
-                    <property name="label">Static</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="chkLogoBreathe">
-                    <property name="group">grpLogo</property>
-                    <property name="label">Breathe</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="chkLogoSpectrum">
-                    <property name="group">grpLogo</property>
-                    <property name="label">Spectrum</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkScale">
-                    <property name="adjustment">
-                      <object class="GtkAdjustment" id="adjLogo">
-                        <property name="step-increment">1.0</property>
-                        <property name="upper">100.0</property>
-                        <property name="value">100.0</property>
-                      </object>
-                    </property>
-                    <property name="digits">0</property>
-                    <property name="draw-value">True</property>
-                    <property name="hexpand">True</property>
-                    <property name="tooltip-text">Brightness</property>
-                    <property name="value-pos">left</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child>
-              <object class="GtkBox">
-                <property name="margin-end">10</property>
-                <property name="spacing">5</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="halign">start</property>
-                    <property name="label">Case Light</property>
-                    <property name="margin-start">10</property>
-                    <property name="width-chars">20</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkColorDialogButton" id="btnCase">
-                    <property name="dialog">
-                      <object class="GtkColorDialog"/>
-                    </property>
-                    <property name="name">Case</property>
-                    <property name="rgba">rgb(0,0,0)</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="chkCaseStatic">
-                    <property name="active">True</property>
-                    <property name="group">
-                      <object class="GtkCheckButton" id="grpCaseLight"/>
-                    </property>
-                    <property name="label">Static</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="chkCaseBreathe">
-                    <property name="group">grpCaseLight</property>
-                    <property name="label">Breathe</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="chkCaseSpectrum">
-                    <property name="group">grpCaseLight</property>
-                    <property name="label">Spectrum</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkScale">
-                    <property name="adjustment">
-                      <object class="GtkAdjustment" id="adjCase">
-                        <property name="step-increment">1.0</property>
-                        <property name="upper">100.0</property>
-                        <property name="value">100.0</property>
-                      </object>
-                    </property>
-                    <property name="digits">0</property>
-                    <property name="draw-value">True</property>
-                    <property name="hexpand">True</property>
-                    <property name="tooltip-text">Brightness</property>
-                    <property name="value-pos">left</property>
-                  </object>
-                </child>
-              </object>
-            </child>
+
             <child>
               <object class="GtkBox">
                 <property name="margin-bottom">10</property>
@@ -338,45 +222,45 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="halign">start</property>
-                    <property name="label">Inner Fan</property>
+                    <property name="label">Left Side Panel</property>
                     <property name="margin-start">10</property>
                     <property name="width-chars">20</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkColorDialogButton" id="btnFan">
+                  <object class="GtkColorDialogButton" id="btnLeft">
                     <property name="dialog">
                       <object class="GtkColorDialog"/>
                     </property>
-                    <property name="name">Fan</property>
+                    <property name="name">LeftPanel</property>
                     <property name="rgba">rgb(0,0,0)</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkFanStatic">
+                  <object class="GtkCheckButton" id="chkLeftStatic">
                     <property name="active">True</property>
                     <property name="group">
-                      <object class="GtkCheckButton" id="grpFan"/>
+                      <object class="GtkCheckButton" id="grpLeft"/>
                     </property>
                     <property name="label">Static</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkFanBreathe">
-                    <property name="group">grpFan</property>
+                  <object class="GtkCheckButton" id="chkLeftBreathe">
+                    <property name="group">grpLeft</property>
                     <property name="label">Breathe</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="chkFanSpectrum">
-                    <property name="group">grpFan</property>
+                  <object class="GtkCheckButton" id="chkLeftSpectrum">
+                    <property name="group">grpLeft</property>
                     <property name="label">Spectrum</property>
                   </object>
                 </child>
                 <child>
                   <object class="GtkScale">
                     <property name="adjustment">
-                      <object class="GtkAdjustment" id="adjFan">
+                      <object class="GtkAdjustment" id="adjLeft">
                         <property name="step-increment">1.0</property>
                         <property name="upper">100.0</property>
                         <property name="value">100.0</property>
@@ -391,6 +275,7 @@
                 </child>
               </object>
             </child>
+
             <child>
               <object class="GtkSeparator"/>
             </child>
@@ -445,9 +330,9 @@
         </child>
       </object>
     </property>
-    <property name="default-height">375</property>
+    <property name="default-height">300</property>
     <property name="default-width">700</property>
     <property name="resizable">False</property>
-    <property name="title">AlienFX Aurora</property>
+    <property name="title">AlienFX Area-51</property>
   </template>
 </interface>

@@ -1,3 +1,4 @@
+/* Derived from AlienFX-Aurora */
 /* main.c
  *
  * Copyright 2024 Freedom
@@ -22,21 +23,19 @@
 
 #include <glib/gi18n.h>
 
-#include "alienfx-aurora-application.h"
+#include "alienfx-area51-application.h"
 
-int
-main(int argc,
-     char *argv[]) {
-	g_autoptr(AlienfxAuroraApplication) app = NULL;
-	int ret;
+int main(int argc, char *argv[]) {
+  g_autoptr(AlienfxArea51Application) app = NULL;
+  int ret;
 
-	bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
-	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
-	textdomain(GETTEXT_PACKAGE);
+  bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
+  bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+  textdomain(GETTEXT_PACKAGE);
 
-	app = alienfx_aurora_application_new("org.gnome.AlienFXAurora", G_APPLICATION_DEFAULT_FLAGS);
-	ret = g_application_run(G_APPLICATION(app), argc, argv);
+  app = alienfx_area51_application_new("org.gnome.AlienFXArea51",
+                                       G_APPLICATION_DEFAULT_FLAGS);
+  ret = g_application_run(G_APPLICATION(app), argc, argv);
 
-
-	return ret;
+  return ret;
 }
