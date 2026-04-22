@@ -20,6 +20,7 @@
  */
 
 #include "humanfx.h"
+#include <math.h>
 
 #include "alienfx-area51-window.h"
 
@@ -276,9 +277,9 @@ static void apply_option(GtkColorDialogButton *btn, GtkCheckButton *chkStatic,
   char config_line[40] = "";
   char buff[40] = "";
   const GdkRGBA *color = gtk_color_dialog_button_get_rgba(btn);
-  color_hex = rgb_to_hex((int)(0.5 + CLAMP(color->red, 0., 1.) * 255.),
-                         (int)(0.5 + CLAMP(color->green, 0., 1.) * 255.),
-                         (int)(0.5 + CLAMP(color->blue, 0., 1.) * 255.));
+  color_hex = rgb_to_hex((int)(0.5 + pow(CLAMP(color->red, 0., 1.), 2.2) * 255.),
+                         (int)(0.5 + pow(CLAMP(color->green, 0., 1.), 2.2) * 255.),
+                         (int)(0.5 + pow(CLAMP(color->blue, 0., 1.), 2.2) * 255.));
 
   sprintf(buff, "%s=", gtk_widget_get_name((GtkWidget *)btn));
   strcat(config_line, buff);
@@ -316,8 +317,15 @@ static void set_static_zone(uint32_t color, uint8_t zone[], size_t length) {
 
 static void set_breathe_zone(uint32_t color, uint8_t zone[], size_t length) {
   send_zone_select_arr(1, length, zone);
+  
+  // Calculate a 5% dim version of the color to prevent LEDs from snapping to pitch black
+  uint8_t r = (color >> 16) & 0xFF;
+  uint8_t g = (color >> 8) & 0xFF;
+  uint8_t b = color & 0xFF;
+  uint32_t dim_color = rgb_to_hex(r / 20, g / 20, b / 20);
+
   send_add_action(ACTION_MORPH, breathe_time, 64, color);
-  send_add_action(ACTION_MORPH, breathe_time, 64, 0);
+  send_add_action(ACTION_MORPH, breathe_time, 64, dim_color);
 }
 
 static void set_spectrum_zone(uint8_t zone[], size_t length) {
@@ -429,9 +437,9 @@ static void btnTestClicked(GtkButton *self, gpointer user_data) {
   }
   const GdkRGBA *color = gtk_color_dialog_button_get_rgba(form->testColorBtn);
   uint32_t color_hex =
-      rgb_to_hex((int)(0.5 + CLAMP(color->red, 0., 1.) * 255.),
-                 (int)(0.5 + CLAMP(color->green, 0., 1.) * 255.),
-                 (int)(0.5 + CLAMP(color->blue, 0., 1.) * 255.));
+      rgb_to_hex((int)(0.5 + pow(CLAMP(color->red, 0., 1.), 2.2) * 255.),
+                 (int)(0.5 + pow(CLAMP(color->green, 0., 1.), 2.2) * 255.),
+                 (int)(0.5 + pow(CLAMP(color->blue, 0., 1.), 2.2) * 255.));
 
   start_transaction();
   for (int i = start; i <= end; i++) {

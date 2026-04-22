@@ -8,7 +8,8 @@ alienfx_area51_sources = [
 alienfx_area51_deps = [
   dependency('gtk4'),
   dependency('libadwaita-1', version: '>= 1.4'),
-  dependency('libusb-1.0')
+  dependency('libusb-1.0'),
+  meson.get_compiler('c').find_library('m', required: false)
 ]
 
 alienfx_area51_sources += gnome.compile_resources('alienfx-area51-resources',

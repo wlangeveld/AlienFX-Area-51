@@ -333,6 +333,6 @@
     <property name="default-height">300</property>
     <property name="default-width">700</property>
     <property name="resizable">False</property>
-    <property name="title">AlienFX Area-51</property>
+    <property name="title">AlienFX Area-51 v1.1</property>
   </template>
 </interface>
