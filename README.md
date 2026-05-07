@@ -32,6 +32,22 @@ To build and install the application automatically, just run:
 
 This will compile the GTK4 application and install it to `$HOME/.local/share/AlienFXArea51`, alongside registering the `.desktop` application in your local environment.
 
+### USB Permissions (udev Rules)
+By default, Linux requires root permissions to interact directly with USB hardware devices. To allow this application to control your lighting without running as `sudo`, you **must** add a `udev` rule for your hardware:
+
+1. Create a new rules file:
+```bash
+sudo nano /etc/udev/rules.d/99-alienware.rules
+```
+2. Add the following line to grant read/write access (`MODE="0666"`) to the specific Alienware USB controller (`187c:0550`):
+```text
+SUBSYSTEM=="usb", ATTRS{idVendor}=="187c", ATTRS{idProduct}=="0550", MODE="0666"
+```
+3. Save the file and reload the udev rules (or reboot your computer):
+```bash
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
 To uninstall, run:
 ```bash
 ./uninstall.sh
